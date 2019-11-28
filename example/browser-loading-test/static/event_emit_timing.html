@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./source/index.css?lazy=1000">
+</head>
+<body>
+  <p class="text-color">2</p>
+  <img id="lazy_img" src="./source/documentwrite.png?lazy=2000" alt="">
+  <script defer src="./source/run_defer_timing.js"></script>
+  <script>
+    document.onreadystatechange = () => {
+      console.log('document state:', document.readyState)
+    }
+
+    window.onload = () => {
+      console.log('window onload')
+    }
+
+    document.querySelector('#lazy_img').onload = () => {
+      console.log('img onload')
+    }
+
+    document.querySelector('link').onload = () => {
+      console.log('css onload')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOMContentLoaded')
+    })
+  </script>
+</body>
+</html>
