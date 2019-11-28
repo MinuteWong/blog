@@ -1,0 +1,1 @@
+console.log('run immediately when fetch success, maybe casue parser be blocked');
